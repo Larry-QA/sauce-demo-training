@@ -1,10 +1,12 @@
 *** Settings ***
 Library    SeleniumLibrary
+Library    BuiltIn
 
 *** Test Cases ***
-Open Sauce Demo Site
+Hello Test Case
+    Log To Console    Hello, Japan
+
+First Test Case
     Open Browser    https://www.saucedemo.com/    chrome
-    Page Should Contain    Swag Labs
-    Capture Page Screenshot
-    Sleep    5
+    sleep    5
     Close Browser
