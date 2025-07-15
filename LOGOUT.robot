@@ -17,5 +17,5 @@ Logout Test Case
     Click Element   id=logout_sidebar_link
     Wait Until Element Is Visible    id=login-button
     Element Should Be Visible        id=login-button
-    Sleep    5
+    Sleep    4
     Close Browser
