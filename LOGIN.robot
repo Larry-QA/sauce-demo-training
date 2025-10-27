@@ -1,17 +1,13 @@
 *** Settings ***
 Resource    Resources/Common.robot
-Test Setup     Open SauceDemo
+Test Setup  Open SauceDemo
 Test Teardown  Close SauceDemo
 
 *** Test Cases ***
-Logout Test Case
-    [Tags]    feature:logout    regression
+Login Test Case
+    [Tags]    feature:login    smoke
     Input Text      ${SELECTORS["input_username"]}    standard_user
     Input Text      ${SELECTORS["input_password"]}    secret_sauce
-    Sleep    ${Delay}
     Click Button    ${SELECTORS["login_button"]}
-    Sleep    ${Delay}
-    Click Element   ${SELECTORS["menu_button"]}
-    Click Element   ${SELECTORS["logout_link"]}
-    Element Should Be Visible    ${SELECTORS["login_button"]}
+    Page Should Contain Element    ${SELECTORS["menu_button"]}
     Sleep    ${Delay}
